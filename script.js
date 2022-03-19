@@ -135,92 +135,102 @@
 
 
 //3)
-// let sccStyle = [
-//   {
-//     name: 'color',
-//     value: 'plum'
-//   },
-//   {
-//     name: 'font-size',
-//     value: 14
-//   },
-//   {
-//     name: 'text-align',
-//     value: 'center'
-//   },
-//   {
-//     name: 'text-decoration',
-//     value: 'underline'
-//   },
-// ]
-//
-//
-//
-// function addText () {
-//   document.write("<p>Какой-то текст</p>")
-// }
-//
-// addText()
-
-
-//4)
-let audience = [
+let cssStyles = [
   {
-    name: 'Apollo',
-    seats: 12,
-    faculty: "Roro"
+    name: 'color',
+    value: 'red'
   },
   {
-    name: 'Beyonce',
-    seats: 18,
-    faculty: "Jojo"
+    name: 'font-size',
+    value: 21 + "px"
   },
   {
-    name: 'Calvin',
-    seats: 15,
-    faculty: "Koko"
+    name: 'text-align',
+    value: 'center'
   },
   {
-    name: 'Asti',
-    seats: 15,
-    faculty: "Koko"
+    name: 'text-decoration',
+    value: 'underline'
   },
 ]
 
-function showAudience () {
-  console.log(audience)
-}
 
-function showByFaculty (facultyName) {
-  audience.forEach(e => {
-    if (e.faculty === facultyName) {
-      console.log(e)
-    }
+
+function addText () {
+  document.write("<p>Какой-то текст</p>")
+  let text = document.querySelector('p')
+  let arr = []
+  let koma = /,/gi;
+  cssStyles.forEach(e => {
+    let a = e.name
+    let b = e.value
+    arr.push(a + ":", b + ";")
+    let style = arr.toString().replace(koma, '')
+    text.setAttribute("style", `${style}`)
   })
 }
 
-function sortBySeats () {
-  let sortedSeats = audience.sort((a,b) => {
-    if (a.seats > b.seats) return 1
-    if (a.seats < b.seats) return -1
-    if (a.seats === b.seats) return 0
-  })
-  console.log(sortedSeats)
-}
+addText()
 
-function sortByAlphabet () {
-  let sortedAudience = audience.sort((a,b) => {
-    if (a.name > b.name) return 1
-    if (a.name < b.name) return -1
-    if (a.name === b.name) return 0
-  })
-  console.log(sortedAudience)
-}
 
-showAudience()
-
-showByFaculty("Koko")
-
-sortBySeats()
-
-sortByAlphabet ()
+// //4)
+// let audience = [
+//   {
+//     name: 'Apollo',
+//     seats: 12,
+//     faculty: "Roro"
+//   },
+//   {
+//     name: 'Beyonce',
+//     seats: 18,
+//     faculty: "Jojo"
+//   },
+//   {
+//     name: 'Calvin',
+//     seats: 15,
+//     faculty: "Koko"
+//   },
+//   {
+//     name: 'Asti',
+//     seats: 15,
+//     faculty: "Koko"
+//   },
+// ]
+//
+// function showAudience () {
+//   console.log(audience)
+// }
+//
+// function showByFaculty (facultyName) {
+//   audience.forEach(e => {
+//     if (e.faculty === facultyName) {
+//       console.log(e)
+//     }
+//   })
+// }
+//
+// function sortBySeats () {
+//   let sortedSeats = audience.sort((a,b) => {
+//     if (a.seats > b.seats) return 1
+//     if (a.seats < b.seats) return -1
+//     if (a.seats === b.seats) return 0
+//   })
+//   console.log(sortedSeats)
+// }
+//
+// function sortByAlphabet () {
+//   let sortedAudience = audience.sort((a,b) => {
+//     if (a.name > b.name) return 1
+//     if (a.name < b.name) return -1
+//     if (a.name === b.name) return 0
+//   })
+//   console.log(sortedAudience)
+// }
+//
+// showAudience()
+//
+// showByFaculty("Koko")
+//
+// sortBySeats()
+//
+// sortByAlphabet ()
